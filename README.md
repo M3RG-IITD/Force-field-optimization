@@ -1,1 +1,1 @@
-# JAX-MD-FFOPT-Notebooks
+# Force field optimization using differentiable simulation
