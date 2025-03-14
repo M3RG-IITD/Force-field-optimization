@@ -1,0 +1,27 @@
+
+units		metal
+
+boundary	p p p
+
+box tilt large
+
+atom_style      atomic
+
+read_data       lampps0.92.dat
+
+pair_style      tersoff
+pair_coeff      * * SiCGe.tersoff  Si(C)
+
+
+neighbor	0.3 bin
+
+thermo          10
+thermo_style    custom step temp pe ke etotal vol press density spcpu
+dump            2 all custom 1000 md.lammpstrj id type x y z
+
+#timestep        1e-3
+#replicate unit cell
+#replicate       8 8 8
+
+#initial minimization
+minimize 1.0e-10 1.0e-10 1 1

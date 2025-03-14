@@ -1,0 +1,22 @@
+
+units		metal
+
+boundary	p p p
+
+box tilt large
+
+atom_style      atomic
+
+read_data       lammps_dia_1.00.dat
+
+pair_style      edip
+pair_coeff      * * Si.edip Si
+
+#fix 0 all box/relax aniso 0.0
+#minimize        1.0e-7 1.0e-7 10000 10000
+#run 20000
+
+write_data      final_mpi_data.dat
+write_restart   final_mpi_data.rest
+
+neighbor	0.3 bin

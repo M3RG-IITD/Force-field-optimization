@@ -1,0 +1,33 @@
+# DATE: 2009-03-18 CONTRIBUTOR: Aidan Thompson, athomps@sandia.gov CITATION: Tersoff, Phys Rev B, 39, 5566 (1989)
+
+# Tersoff parameters for various elements and mixtures
+# multiple entries can be added to this file, LAMMPS reads the ones it needs
+# these entries are in LAMMPS "metal" units:
+#   A,B = eV; lambda1,lambda2,lambda3 = 1/Angstroms; R,D = Angstroms
+#   other quantities are unitless
+
+# Aidan Thompson (athomps at sandia.gov) takes full blame for this
+# file.  It specifies various potentials published by J. Tersoff for
+# silicon, carbon and germanium. Since Tersoff published several
+# different silicon potentials, I refer to them using atom types
+# Si(B), Si(C) and Si(D). The last two are almost almost identical but
+# refer to two different publications. These names should be used in
+# the LAMMPS command when the file is invoked. For example:
+# pair_coeff * * SiCGe.tersoff Si(B).  The Si(D), C and Ge potentials
+# can be used pure silicon, pure carbon, pure germanium, binary SiC,
+# and binary SiGe, but not binary GeC or ternary SiGeC. LAMMPS will
+# generate an error if this file is used with any combination
+# involving C and Ge, since there are no entries for the GeC
+# interactions (Tersoff did not publish parameters for this
+# cross-interaction.)
+
+# format of a single entry (one or more lines):
+#   element 1, element 2, element 3, 
+#   m, gamma, lambda3, c, d, costheta0, n, beta, lambda2, B, R, D, lambda1, A
+
+# The later Tersoff potential for Silicon, Si(C)
+# J. Tersoff, PRB, 38, 9902 (1988) 
+
+Si(C)  Si(C)   Si(C)  3.0 1.0 1.7322 1.0039e5 16.218 -0.59826 0.78734
+             1.0999e-6  1.7322  471.18  2.85  0.15  2.4799  1830.8
+

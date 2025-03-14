@@ -1,0 +1,75 @@
+# SW potential for Silicon
+
+units		metal
+dimension       3
+processors      * * *
+boundary	p p p
+
+#read data
+atom_style      atomic
+
+# read restart
+#read_restart    S300K.rest
+
+#read data
+read_data	si-8.dat
+
+#potential
+pair_style      sw
+pair_coeff      * * Si.sw Si
+
+neighbor        2.0 bin
+neigh_modify    every 1 delay 1 check yes
+
+
+#outputs
+velocity all create 300.0 121 mom yes dist gaussian
+thermo		100
+thermo_style	custom time temp press vol pe 
+#dump		2 all custom 1000 md.lammpstrj id type x y z
+
+timestep        1e-3
+
+#replicate unit cell
+replicate       4 4 4
+
+#initial minimization
+#minimize 1.0e-10 1.0e-10 1 1
+
+#initial mixing
+#fix             1 all nve temp 300 300 0.1 # 100 dt
+#run             10000
+#unfix           1
+
+fix             1 all npt temp 300 3300 0.1 iso 0.0 0.0 1.0
+run             300000
+unfix           1
+
+#reset_timestep 0
+
+#dump            2 all custom 10 md.lammpstrj id type x y z
+
+#run 60000
+
+
+#fix             1 all nvt temp 300 5000 100 tchain 5 tloop 2
+#run             470000
+#unfix           1
+
+#fix             1 all nvt temp 5000 5000 100 tchain 5 tloop 2
+#run             100000
+#unfix           1
+
+# cooling at 10 K/ps
+#fix             1 all nvt temp 3500 300 100 
+#run             470000
+#unfix           1
+
+# final relaxation
+#fix             1 all nvt temp 300 300 100 
+#run             10000
+#unfix           1
+
+
+write_data S300K.dat
+write_restart S300K.rest

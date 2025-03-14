@@ -1,0 +1,29 @@
+Job 8177928 started on:    n7416
+Job 8177928 started on:    Fri Jul 28 00:42:26 PDT 2023
+ 
+	Command being timed: "/u/local/compilers/intel/2020.4/compilers_and_libraries_2020.4.304/linux/mpi/intel64/bin/mpirun -np 1 /u/home/a/agangan2/LAMMPS_HOFFMAN2/lammps_exe/lmp_mpi_most"
+	User time (seconds): 59.23
+	System time (seconds): 0.58
+	Percent of CPU this job got: 70%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:24.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 93744
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 24
+	Minor (reclaiming a frame) page faults: 38655
+	Voluntary context switches: 2500
+	Involuntary context switches: 3921
+	Swaps: 0
+	File system inputs: 41912
+	File system outputs: 63848
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Job 8177928 ended on:    n7416
+Job 8177928 ended on:    Fri Jul 28 00:43:50 PDT 2023
+ 
