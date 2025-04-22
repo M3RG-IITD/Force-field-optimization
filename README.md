@@ -1,4 +1,5 @@
 # Force field optimization using differentiable simulation
+[![DOI](https://zenodo.org/badge/946724030.svg)](https://doi.org/10.5281/zenodo.15258641)
 
 This repository contains the code and data for the paper "Force field optimization by end-to-end differentiable atomistic simulation" [arXiv:2409.13844](https://arxiv.org/abs/2409.13844).
 
